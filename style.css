@@ -1,3 +1,8 @@
+/* ====================================
+   MEGAMIR - QURILISH MATERIALLARI
+   TO'LIQ OPTIMALLASHTIRILGAN CSS
+   ==================================== */
+
 /* Global Styles */
 :root {
     --primary-blue: #0100E2;
@@ -22,12 +27,14 @@ body {
     color: var(--dark-gray);
     line-height: 1.6;
     background: var(--white);
+    overflow-x: hidden;
 }
 
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
+    width: 100%;
 }
 
 /* Typography */
@@ -72,20 +79,20 @@ h1, h2, h3, h4, h5, h6 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: 70px; /* Balandlikni biroz kamaytirdim */
-    padding: 0 30px; /* Yon tomonlardan padding */
+    height: 70px;
+    padding: 0 30px;
 }
 
-/* Logo - Chap tomonda */
+/* Logo */
 .logo a {
     display: flex;
     align-items: center;
-    gap: 8px; /* Rasm va matn orasidagi masofa */
+    gap: 8px;
     text-decoration: none;
 }
 
 .logo-img {
-    height: 40px; /* Rasm hajmini kichraytirdim */
+    height: 40px;
     width: auto;
     transition: var(--transition);
 }
@@ -95,10 +102,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .logo-text {
-    font-size: 22px; /* Matn hajmini kichraytirdim */
+    font-size: 22px;
     font-weight: 800;
     color: var(--primary-blue);
-    letter-spacing: 1px; /* Harflar orasidagi masofani kamaytirdim */
+    letter-spacing: 1px;
     text-transform: uppercase;
     transition: var(--transition);
 }
@@ -107,28 +114,28 @@ h1, h2, h3, h4, h5, h6 {
     animation: glitch 0.5s infinite;
 }
 
-/* Nav Menu - O'rtada */
+/* Nav Menu */
 .nav-menu {
     display: flex;
     list-style: none;
-    gap: 25px; /* Menu itemlar orasidagi masofani kamaytirdim */
+    gap: 25px;
     margin: 0;
     padding: 0;
     position: absolute;
     left: 53%;
-    transform: translateX(-50%); /* Menuni markazga joylash */
+    transform: translateX(-50%);
 }
 
 .nav-menu a {
     color: var(--dark-gray);
     text-decoration: none;
     font-weight: 600;
-    font-size: 14px; /* Font hajmini kichraytirdim */
+    font-size: 14px;
     text-transform: uppercase;
     transition: var(--transition);
     position: relative;
-    padding: 5px 0; /* Padding qo'shdim */
-    white-space: nowrap; /* Matnni bir qatorda saqlash */
+    padding: 5px 0;
+    white-space: nowrap;
 }
 
 .nav-menu a::before {
@@ -146,7 +153,8 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--primary-blue);
 }
 
-.nav-menu a:hover::before {
+.nav-menu a:hover::before,
+.nav-menu a.active::before {
     width: 100%;
 }
 
@@ -154,11 +162,7 @@ h1, h2, h3, h4, h5, h6 {
     color: var(--primary-blue);
 }
 
-.nav-menu a.active::before {
-    width: 100%;
-}
-
-/* Hamburger menyu - Mobil uchun */
+/* Hamburger menyu */
 .hamburger {
     display: none;
     flex-direction: column;
@@ -174,94 +178,6 @@ h1, h2, h3, h4, h5, h6 {
     transition: var(--transition);
 }
 
-/* Responsive */
-@media (max-width: 1024px) {
-    .nav-menu {
-        gap: 15px; /* Kichik ekranlarda masofani kamaytirish */
-    }
-    
-    .nav-menu a {
-        font-size: 13px; /* Fontni kichraytirish */
-    }
-}
-
-@media (max-width: 1000px) {
-    .navbar .container {
-        padding: 0 20px;
-    }
-    
-    .nav-menu {
-        gap: 12px;
-    }
-    
-    .nav-menu a {
-        font-size: 12px;
-    }
-    
-    .logo-text {
-        font-size: 20px;
-    }
-    
-    .logo-img {
-        height: 35px;
-    }
-}
-
-@media (max-width: 800px) {
-    .hamburger {
-        display: flex;
-    }
-
-    .nav-menu {
-        position: fixed;
-        left: -100%;
-        top: 70px;
-        flex-direction: column;
-        background: var(--white);
-        width: 100%;
-        text-align: center;
-        padding: 30px 0;
-        gap: 20px;
-        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        transition: 0.3s;
-        z-index: 999;
-        left: 50%;
-        transform: translateX(-100%); /* Mobil menyu uchun */
-    }
-
-    .nav-menu.active {
-        left: 50%;
-        transform: translateX(-50%);
-    }
-
-    .nav-menu a {
-        font-size: 16px; /* Mobil uchun kattaroq */
-        display: inline-block;
-        padding: 10px 0;
-    }
-    
-    .logo-text {
-        font-size: 20px;
-    }
-    
-    .logo-img {
-        height: 35px;
-    }
-}
-
-@media (max-width: 480px) {
-    .navbar .container {
-        padding: 0 15px;
-    }
-    
-    .logo-text {
-        font-size: 18px;
-    }
-    
-    .logo-img {
-        height: 30px;
-    }
-}
 /* Hero Section */
 .hero {
     min-height: 100vh;
@@ -292,6 +208,7 @@ h1, h2, h3, h4, h5, h6 {
     color: white;
     position: relative;
     z-index: 2;
+    text-align: center;
 }
 
 .hero .hero-subtitle,
@@ -590,7 +507,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .material-image {
-    height: 200px;
     overflow: hidden;
 }
 
@@ -1446,14 +1362,50 @@ body.loaded {
     animation: fadeIn 0.5s ease;
 }
 
-/* Responsive */
+/* ====================================
+   RESPONSIVE DESIGN
+   ==================================== */
+
+/* Large Desktop */
 @media (max-width: 1200px) {
     .container {
         max-width: 960px;
     }
 }
 
-@media (max-width: 992px) {
+/* Desktop va kichik ekranlar */
+@media (max-width: 1024px) {
+    .nav-menu {
+        gap: 15px;
+    }
+    
+    .nav-menu a {
+        font-size: 13px;
+    }
+}
+
+/* Planshet va kichik desktop */
+@media (max-width: 1000px) {
+    .navbar .container {
+        padding: 0 20px;
+    }
+    
+    .nav-menu {
+        gap: 12px;
+    }
+    
+    .nav-menu a {
+        font-size: 12px;
+    }
+    
+    .logo-text {
+        font-size: 20px;
+    }
+    
+    .logo-img {
+        height: 35px;
+    }
+    
     .about-wrapper {
         grid-template-columns: 1fr;
         gap: 30px;
@@ -1501,7 +1453,8 @@ body.loaded {
     }
 }
 
-@media (max-width: 768px) {
+/* Mobil - planshet */
+@media (max-width: 800px) {
     .hamburger {
         display: flex;
     }
@@ -1509,21 +1462,33 @@ body.loaded {
     .nav-menu {
         position: fixed;
         left: -100%;
-        top: 80px;
+        top: 60px;
         flex-direction: column;
         background: var(--white);
         width: 100%;
+        height: calc(100vh - 60px); /* To'liq balandlik */
         text-align: center;
-        padding: 30px 0;
+        padding: 40px 20px;
         gap: 20px;
         box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        transition: var(--transition);
+        transition: 0.3s ease-in-out;
+        z-index: 1000;
+        overflow-y: auto; /* Scroll bo'lsa */
+        justify-content: flex-start;
+        flex-wrap: nowrap;
     }
 
     .nav-menu.active {
-        left: 0;
+        left: 50%;
+        transform: translateX(-50%);
     }
 
+    .nav-menu a {
+        font-size: 16px;
+        display: inline-block;
+        padding: 10px 0;
+    }
+    
     .glitch-text {
         font-size: 3rem;
     }
@@ -1590,13 +1555,50 @@ body.loaded {
     }
 }
 
+/* Kichik mobil (telefonlar) */
 @media (max-width: 480px) {
+    .navbar .container {
+        padding: 0 15px;
+        height: 60px;
+    }
+    
+    .logo-text {
+        font-size: 18px;
+    }
+    
+    .logo-img {
+        height: 30px;
+    }
+    
     .section-title {
         font-size: 2rem;
     }
 
     .glitch-text {
         font-size: 2rem;
+        letter-spacing: 2px;
+    }
+
+    .hero-subtitle {
+        font-size: 1rem;
+        margin: 1rem 0;
+    }
+    
+    .hero-badges {
+        margin: 15px 0;
+        gap: 8px;
+    }
+    
+    .badge {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+    
+    .contact-phone {
+        padding: 10px 20px;
+        font-size: 1rem;
+        width: 100%;
+        justify-content: center;
     }
 
     .statement-bold {
@@ -1604,7 +1606,7 @@ body.loaded {
     }
 
     .about-img {
-        height: 300px;
+        height: 250px;
     }
     
     .material-image {
@@ -1612,9 +1614,11 @@ body.loaded {
     }
     
     .experience-badge {
-        width: 80px;
-        height: 80px;
-        padding: 10px;
+        width: 70px;
+        height: 70px;
+        padding: 8px;
+        bottom: 15px;
+        right: 15px;
     }
     
     .experience-badge .years {
@@ -1622,38 +1626,138 @@ body.loaded {
     }
     
     .experience-badge span:last-child {
-        font-size: 0.7rem;
+        font-size: 0.6rem;
     }
 
     .investment-features {
         grid-template-columns: 1fr;
     }
 
-    .call-button span {
-        display: none;
-    }
-
     .call-button {
-        padding: 15px;
-        border-radius: 50%;
+        bottom: 20px;
+        right: 20px;
+        padding: 12px 18px;
     }
 
     .call-button i {
-        font-size: 1.5rem;
-        margin: 0;
+        font-size: 1.2rem;
+    }
+
+    .call-button span {
+        display: inline;
+        font-size: 0.9rem;
     }
 
     .big-phone {
-        font-size: 1.5rem;
-        padding: 10px 20px;
+        font-size: 1.3rem;
+        padding: 12px 20px;
+        width: 100%;
+        text-align: center;
     }
 
     .club-benefits {
         flex-direction: column;
+        gap: 12px;
     }
 
     .club-benefit {
         width: 100%;
         justify-content: center;
+    }
+    
+    .footer-logo-img {
+        height: 35px;
+    }
+    
+    .footer-links {
+        gap: 15px;
+    }
+    
+    .footer-links a {
+        font-size: 0.9rem;
+    }
+    
+    .footer-phone {
+        font-size: 1rem;
+    }
+}
+
+/* Juda kichik telefonlar (iPhone 5/SE) */
+@media (max-width: 360px) {
+    .logo-text {
+        font-size: 16px;
+    }
+    
+    .logo-img {
+        height: 25px;
+    }
+    
+    .glitch-text {
+        font-size: 1.8rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .statement-bold {
+        font-size: 1.3rem;
+    }
+    
+    .badge {
+        font-size: 0.75rem;
+        padding: 5px 10px;
+    }
+    
+    .contact-phone {
+        font-size: 0.9rem;
+        padding: 8px 16px;
+    }
+    
+    .big-phone {
+        font-size: 1.1rem;
+        padding: 10px 15px;
+    }
+    
+    .call-button {
+        padding: 10px 15px;
+    }
+    
+    .call-button span {
+        font-size: 0.8rem;
+    }
+}
+
+/* Touch qurilmalar uchun optimallashtirish */
+@media (hover: none) and (pointer: coarse) {
+    .material-card:hover,
+    .guarantee-card:hover,
+    .feature:hover,
+    .btn:hover,
+    .statement-box:hover,
+    .club-benefit:hover {
+        transform: none;
+    }
+    
+    .nav-menu a,
+    .footer-links a,
+    .social-links a,
+    .btn,
+    .call-button {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    .hero,
+    .masters-club {
+        background-attachment: scroll;
+    }
+}
+
+/* Safari uchun maxsus fix */
+@supports (-webkit-touch-callout: none) {
+    .hero,
+    .masters-club {
+        background-attachment: scroll;
     }
 }
